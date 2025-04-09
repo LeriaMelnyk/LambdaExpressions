@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main {
     public static List<Integer> filterOddNumbers(List<Integer> numbers) {
@@ -18,6 +19,29 @@ public class Main {
     public static int calculateSumEvenNumbers(List<Integer> numbers) {
         return numbers.stream().filter(x -> x % 2 == 0).reduce(0, Integer::sum);
     }
+
+    public static int factorial(int n) {
+        return IntStream.rangeClosed(1,n)
+                .reduce(1, (a,b)-> {
+                    return a * b;
+                });
+    }
+
+    public static Integer suma(List<Integer> numbers) {
+        return numbers.stream().reduce(0,(a,b)-> a+b);
+    }
+
+    public static Integer product(List<Integer> numbers) {
+        return numbers.stream().reduce(1, (a,b)-> a*b);
+    }
+
+    public static List<Integer> squareNumbers(List<Integer> numbers) {
+        return numbers.stream()
+                .map(n->n*n)
+                .collect(Collectors.toList());
+    }
+
+
 
 
 
@@ -40,6 +64,10 @@ public class Main {
         List<Integer> numbers1= List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         int sum = calculateSumEvenNumbers(numbers1);
         System.out.println("Сума парних чисел: " + sum);
+
+        int number = 6;
+        int factorial = factorial(number);
+        System.out.println("Факторіал числа: " +number + " це " + factorial);
 
 
     }
