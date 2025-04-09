@@ -69,6 +69,11 @@ public class Main {
         int factorial = factorial(number);
         System.out.println("Факторіал числа: " +number + " це " + factorial);
 
+        int suma= suma(numbers1);
+        System.out.println("Сума чисел масиву: " + suma);
+
+        int product = product(numbers1);
+        System.out.println("Добуток чисел масиву: " +product);
 
     }
 }
